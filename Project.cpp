@@ -68,7 +68,7 @@ class Transaksi{
 		}
 		void hitungTotalBelanja(){
 			for(int i=0; i<n; i++){
-				totalBelanja += keranjang[i];
+				//totalBelanja += keranjang[i];
 			}
 		}
 		void hitungPotongan(){
