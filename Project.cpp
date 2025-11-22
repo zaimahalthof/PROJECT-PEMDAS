@@ -43,14 +43,14 @@ class Pembayaran{
 class Transaksi{
 	private:
 		double pajak; //10%
-		int noTransaksi;
+		int noTransaksi = 0;
 		double totalBelanja;
 		float diskon;
 		double potongan;
 		double totalBayar;
 	public:
 		void setNoTransaksi(){
-			 
+			noTransaksi++;
 		}
 		void setDiskon(string id){
 			if (id == "silver"){
@@ -67,23 +67,44 @@ class Transaksi{
 			}
 		}
 		void hitungTotalBelanja(){
-			for(int i=0; i<n; i++){
-				totalBelanja += keranjang[i];
-			}
+			//for(int i=0; i<n; i++){
+			//	totalBelanja += keranjang[i];
+			//}
 		}
 		void hitungPotongan(){
 			potongan = totalBelanja * diskon;
 		}
 		void hitungPajak(){
-			pajak = totalBelanja * 0.1;
+			pajak = (totalBelanja - potongan) * 0.1;
 		}
 		void hitungTotalBayar(){
 			totalBayar = totalBelanja - potongan + pajak;
 		}
+		void printStruk(){
+			cout<<"================================"<<endl;
+			cout<<"            HGZ Mart            "<<endl;
+			cout<<"    Jl. Yang Terbaik, Malang    "<<endl;
+			cout<<"================================"<<endl;
+			cout<<tanggal<<endl;
+			cout<<"No. "<<noTransaksi<<endl;
+			cout<<nama<<endl; //nama kasir
+			for (int i=0; i<; i++){
+				cout<<keranjang[i]<<"\t"<<quantity[i]*harga[i]<<endl;
+				cout<<quantity[i]<<"x"<<harga[i]<<endl;
+			}
+			cout<<"\n";
+			cout<<"Subtotal = "<<totalBelanja<<endl;
+			cout<<"Diskon "<<diskon*100<<"% = "<<potongan<<endl;
+			cout<<"PPN 10% = "<<pajak<<endl;
+			cout<<"Total = "<<totalBayar<<endl;
+			cout<<"================================"<<endl;
+			cout<<"Membership : "<<noPelanggan<<endl;
+			cout<<"\n";
+			cout<<"          Terima Kasih          "<<endl;
+		}
 };
 
 int main(){
-	
 	
 	return 0;
 }
