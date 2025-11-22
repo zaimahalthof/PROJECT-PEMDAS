@@ -67,15 +67,12 @@ class Transaksi{
 			}
 		}
 		void hitungTotalBelanja(){
-<<<<<<< HEAD
 			//for(int i=0; i<n; i++){
 			//	totalBelanja += keranjang[i];
 			//}
-=======
 			for(int i=0; i<n; i++){
-				//totalBelanja += keranjang[i];
+				//totalBelanja += harga[i];
 			}
->>>>>>> 5e2f2e0e1dcde46795e3c12fabc50ae422a918ac
 		}
 		void hitungPotongan(){
 			potongan = totalBelanja * diskon;
